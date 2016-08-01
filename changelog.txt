@@ -2,10 +2,4 @@ Changes(1 August 2016):
 Update source code to be compatible with JDK 1.7
 This project is too old that NetBeans is unable to read the project files.
 However it is still possible to compile with Apache Ant
-
-To clean the build
-ant clean-build
-
-To build
-ant compile
-
+IzPack 5.0.9 is used for installer preparation
