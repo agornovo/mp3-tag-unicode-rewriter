@@ -88,7 +88,12 @@
 	
         <mkdir dir="${lib}"/>
 	<!-- Compile the source files -->
-	<javac debug="${compile.debug}" deprecation="${compile.deprecation}" destdir="${build}" optimize="${compile.optimize}" srcdir="${src}">
+	<javac debug="${compile.debug}" deprecation="${compile.deprecation}" 
+    destdir="${build}" optimize="${compile.optimize}" srcdir="${src}"
+    includeantruntime="false"
+    >
+        <compilerarg value="-Xlint:deprecation"/>
+        <compilerarg value="-Xlint:unchecked"/>
      	    <classpath refid="compile.classpath"/>
 	</javac>
 
