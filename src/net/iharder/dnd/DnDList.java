@@ -40,7 +40,7 @@ implements  java.awt.dnd.DropTargetListener,
      */
     public DnDList() 
     {   
-        super( new javax.swing.DefaultListModel<JList>() );
+        super<String> ( new javax.swing.DefaultListModel() );
         initComponents();
     }   // end constructor
     
@@ -210,7 +210,7 @@ implements  java.awt.dnd.DropTargetListener,
             {
                 // See where in the list we dropped the element.
                 int dropIndex = locationToIndex( evt.getLocation() );
-                javax.swing.DefaultListModel model = (javax.swing.DefaultListModel)getModel();
+                javax.swing.DefaultListModel<String> model = (javax.swing.DefaultListModel)<String>getModel();
 
                 if( dropIndex < 0 )
                     model.addElement( obj );
