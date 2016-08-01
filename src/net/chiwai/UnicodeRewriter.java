@@ -1859,7 +1859,8 @@ public class UnicodeRewriter extends JFrame {
     public static void main(String args[]) {  
         if (args.length == 0) {             
              //Run in graphical mode
-             new UnicodeRewriter().show();
+             new UnicodeRewriter().setVisible(true);
+             
          } else {
              //Run in command line mode
              ID3iconv.main (args);

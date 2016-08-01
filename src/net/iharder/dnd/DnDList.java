@@ -40,7 +40,7 @@ implements  java.awt.dnd.DropTargetListener,
      */
     public DnDList() 
     {   
-        super( new javax.swing.DefaultListModel() );
+        super( new javax.swing.DefaultListModel<JList>() );
         initComponents();
     }   // end constructor
     

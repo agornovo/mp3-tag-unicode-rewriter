@@ -353,7 +353,7 @@ public class ID3v2 {
 			throw new NoID3v2TagException();
 		}
 
-		Vector res = new Vector();
+		Vector<ID3v2Frame> res = new Vector<ID3v2Frame>();
 		ID3v2Frame tmp;
 		for (Enumeration e = frames.elements(); e.hasMoreElements();) {
 			tmp = (ID3v2Frame) e.nextElement();
@@ -377,7 +377,7 @@ public class ID3v2 {
 	 */
 	public void addFrame(ID3v2Frame frame) {
 		if (frames == null) {
-			frames = new Vector();
+			frames = new Vector<ID3v2Frame>();
 		}
 
 		frames.addElement(frame);
@@ -473,7 +473,7 @@ public class ID3v2 {
 	 */
 	public void removeFrames() {
 		if (frames != null) {
-			frames = new Vector();
+			frames = new Vector<ID3v2Frame>();
 		}
 	}
 
@@ -660,7 +660,7 @@ public class ID3v2 {
 
 	private ID3v2Header header;
 	private ID3v2ExtendedHeader extended_header;
-	private Vector frames;
+	private Vector<ID3v2Frame> frames;
 
 	private boolean is_changed = false;
 	private boolean use_padding = true;
@@ -749,7 +749,7 @@ public class ID3v2 {
 		}
 
 		//// Convert bytes to ID3v2Frames
-		frames = new Vector();
+		frames = new Vector<ID3v2Frame>();
 
 		ByteArrayInputStream bis = new ByteArrayInputStream(frames_as_byte);
 		// read frames as long as there are bytes and we are not reading from padding

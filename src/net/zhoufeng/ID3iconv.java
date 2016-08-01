@@ -24,7 +24,7 @@ public class ID3iconv {
 	private static boolean quiet;
 	private static boolean dry;
 
-	private static HashSet NON_UNICODE_FIELDS = new HashSet();
+	private static HashSet<String> NON_UNICODE_FIELDS = new HashSet<String>();
 	private static String[] _NON_UNICODE_FIELDS = {
 		"TDAT", "TIME", "TPOS", "TRCK", "TYER"
 	};
