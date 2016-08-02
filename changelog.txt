@@ -1,5 +1,8 @@
 Changes(1 August 2016):
-Update source code to be compatible with JDK 1.7
+Update source code to be compatible with J2SE 1.7
 This project is too old that NetBeans is unable to read the project files.
-However it is still possible to compile with Apache Ant
+However it is still possible to import as an Apache Ant project to NetBeans 8.1
+You can also compile source code with Apache Ant
 IzPack 5.0.9 is used for installer preparation
+Ant 1.9.6 is used for the compilation
+Drag and Drop is now possible with Filedrop 1.1 source code

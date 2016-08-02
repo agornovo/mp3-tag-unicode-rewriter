@@ -5,7 +5,7 @@
   <title>Unicode Rewriter User Manual</title>
   <articleinfo>
     <copyright>
-      <year>2004</year>
+      <year>2004-2016</year>
     </copyright>
     <revhistory>
       <revision>
@@ -13,6 +13,11 @@
         <date>July 2004</date>
         <revdescription>
           <para>Document created.</para>
+        </revdescription>
+        <revnumber>2</revnumber>
+        <date>August 2016</date>
+        <revdescription>
+          <para>Source code is recompiled with new JDK. New IzPack is used.</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -38,7 +43,7 @@
   </articleinfo>
   <section>
     <title>Introduction</title>
-    <para>I have many MP3 files which were ripped under Traditional Chinese version of Windows. The ID3 tags are encoding using Big5. As I am also a Mac OS X user, I use iTunes to listen to the MP3 files. Unfortunately, iTunes is unable to understand Big5 encoding. It only accepts Unicode. After a little research in the Internet, I found that Chinese Rewriter can solve my problem. Chinese Rewriter can convert ID3 tags of every MP3 file from Big5 to Unicode. Only one at a time. There is no way to convert a batch of MP3 files with a few mouse clicks. As I do not have much knowledge in ID3 tags, I looked for other software to solve my problem. Incidently, I found ID3iconv which works find for me. Since ID3iconv is a command line tool, it would make my life easier if there is a graphical user interface (GUI) for it. Unicode Rewriter is thus born.</para>
+    <para>I have many MP3 files which were ripped under Traditional Chinese version of Windows. The ID3 tags are encoding using Big5. As I am also a Mac OS X user, I use iTunes to listen to the MP3 files. Unfortunately, iTunes is unable to understand Big5 encoding. It only accepts Unicode. After a little research in the Internet, I found that Chinese Rewriter can solve my problem. Chinese Rewriter can convert ID3 tags of every MP3 file from Big5 to Unicode. Only one at a time. There is no way to convert a batch of MP3 files with a few mouse clicks. As I do not have much knowledge in ID3 tags, I looked for other software to solve my problem. Incidently, I found ID3iconv which works fine for me. Since ID3iconv is a command line tool, it would make my life easier if there is a graphical user interface (GUI) for it. Unicode Rewriter is thus born.</para>
   </section>
   <section>
     <title>Features</title>
@@ -84,7 +89,7 @@
   <section>
     <title>Using Unicode Rewriter</title>
     <para>There are a few methods to run this software. For Mac OS X and Windows users, simply double click the icon of UnicodeRewriter.jar to run the application. If this method does not work, you can edit UnicodeRewriter.sh (for Unix) or UnicodeRewriter .bat (for Windows) and run the scripts.</para>
-    <para>Unicode Rewrite can run in 2. The first is command line mode which behaves similarly to ID3iconv. The second is graphical mode.</para>
+    <para>Unicode Rewrite can run in 2 modes. The first is command line mode which behaves similarly to ID3iconv. The second is graphical mode.</para>
     <section>
       <title>Command Line Mode</title>
       <para>If a parameter is passed to the application, Unicode Rewriter will run in command line mode. The syntax is:</para>
@@ -118,7 +123,10 @@
     <para>Although Java program can run everywhere, it may not work exactly the same on every platform. As this software is written for Mac OS X, it may not work properly on other platform like Linux or Windows. If you know how to solve the problems, please write to me. Below is the list of known bugs</para>
     <section>
       <title>Hidden Menu</title>
-      <para>When "Encoding" menu is browsed, some part of the menu is hidden. But after browsing for a long time, the problem disappears.</para>
+      <para>When "Encoding" menu is browsed, some part of the menu is hidden. But after browsing for a long time, the problem disappears.
+      </para>
+      <para>A work around solution is to click "Recursive" button a few times to refresh the menu.
+      </para>
       <para> <figure>
           <title>Menu is hidden (Windows 2000)</title>
           <screenshot>
@@ -136,20 +144,16 @@
           </screenshot>
         </figure></para>
     </section>
-    <section>
-      <title>Drag &amp; Drop</title>
-      <para>Drag &amp; Drop feature is working fine on Mac OS X and Windows environment. But Linux does not allow drag and drop feature. This problem may be caused by the limitation of <ulink url="http://iharder.sourceforge.net/">FileDrop</ulink> library.</para>
-    </section>
   </section>
   <section>
     <title>Development Enviorment</title>
-    <para>The software was written under <ulink url="http://www.apple.com/macosx">Mac OS X</ulink> 10.3.4 with <ulink url="http://www.java.com">Java</ulink> 2 Software Development Kit, Standard Edition v. 1.4.2. <ulink url="http://www.netbeans.org/">Netbeans</ulink> 3.5.1 is used for layout generation. <ulink url="http://ant.apache.org/">Ant</ulink> 1.5.1 is used for the automation of source code processing. <ulink url="http://www.izforge.com/izpack/">IzPack</ulink> 3.5.4 is used for the preparation of the installer. </para>
-    <para>This document is prepared using <ulink url="http://www.oasis-open.org/docbook/">Docbook</ulink> XML V4.1.2 with the original style sheet. <ulink url="http://www.morphon.com/">Morphon</ulink> XML-Editor 3.1.4 is used for editing the document.</para>
+    <para>The software was written with <ulink url="http://openjdk.java.net">OpenJDK</ulink> Software Development Kit, 1.7.0_101. <ulink url="http://www.netbeans.org/">Netbeans</ulink> 3.5.1 was used for layout generation. <ulink url="http://ant.apache.org/">Ant</ulink> 1.9.6 is used for the automation of source code processing. <ulink url="http://www.izforge.com/izpack/">IzPack</ulink> 5.0.9 is used for the preparation of the installer. </para>
+    <para>This document is prepared using <ulink url="http://www.oasis-open.org/docbook/">Docbook</ulink> XML V4.1.2 with the original style sheet.</para>
   </section>
   <section>
     <title>Credit</title>
-    <para>Unicode Rewriter is not entirely written from scratch. The core of the ID3 tag handling is through the help of <ulink url="http://www.cs.berkeley.edu/%7Ezf/id3iconv/">ID3iconv</ulink> 0.2.1. Unicode Rewriter is a GUI interface to ID3iconv.</para>
-    <para>The drag and drop feature is provided by <ulink url="http://iharder.sourceforge.net/">FileDrop</ulink> 1.0.</para>
+    <para>Unicode Rewriter is not entirely written from scratch. The core of the ID3 tag handling is through the help of <ulink url="http://www.zhoufeng.net/eng/id3iconv/">ID3iconv</ulink> 0.2.1. Unicode Rewriter is a GUI interface to ID3iconv.</para>
+    <para>The drag and drop feature is provided by <ulink url="http://iharder.sourceforge.net/">FileDrop</ulink> 1.1.</para>
     <para>Icons are provided by <ulink url="mailto:art_vladz@rambler.ru">VladZ</ulink>.</para>
   </section>
   <section>
@@ -160,14 +164,11 @@
     <title>Supported Encoding</title>
     <sect1>
       <title>Supported Encoding</title>
-      <para>Supported encoding depends on the version of the Java runtime environment. As Unicode Rewriter runs under J2SE 1.4, all encoding supported by J2SE 1.4 is supported by Unicode Rewriter. If Unicode Rewriter runs under J2SE 5, then all encoding supported by J2SE 5 is supported by Unicode Rewriter.</para>
+      <para>Supported encoding depends on the version of the Java runtime environment. As Unicode Rewriter runs under Java Standard Edition (Jave SE) 7, all encoding supported by Java SE 7 is supported by Unicode Rewriter.</para>
       <para>Please see the link below for the complete list of the supported encoding.</para>
       <para> <orderedlist>
           <listitem>
-            <para><ulink url="http://java.sun.com/j2se/1.4/docs/guide/intl/encoding.doc.html">J2SE 1.4</ulink></para>
-          </listitem>
-          <listitem>
-            <para><ulink url="http://java.sun.com/j2se/1.5.0/docs/guide/intl/encoding.doc.html">J2SE 5</ulink></para>
+            <para><ulink url="https://docs.oracle.com/javase/7/docs/technotes/guides/intl/encoding.doc.html">J2SE 7</ulink></para>
           </listitem>
         </orderedlist> </para>
     </sect1>
