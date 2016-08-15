@@ -1,6 +1,5 @@
 <?xmlversion="1.0" encoding="utf-8"?>
-<!--   <jnlp spec="1.0+"codebase="http://unicoderewriter.sourceforge.net/webstart" href="UnicodeRewriterWebStart.jnlp"> -->
-   <jnlp spec="1.0+"codebase="file://///Users/huicw/UnicodeRewriter/webstart" href="UnicodeRewriterWebStart.jnlp">
+<jnlp spec="1.0+"codebase="http://unicoderewriter.sourceforge.net/webstart" href="UnicodeRewriterWebStart.jnlp">
 	<information>
 		<title>Unicode Rewriter</title>
                	<vendor>ChiWai</vendor>
@@ -14,9 +13,8 @@
 		<all-permissions/>
 	</security>
        <resources>
-		<j2se version="1.4+"/>
+		<j2se version="1.7+"/>
 		<jar href="UnicodeRewriterS.jar"/>
-		<jar href="org.netbeans.lib.awtextraS.jar"/>
        </resources>
        <application-desc main-class="net.chiwai.UnicodeRewriter"/>
 </jnlp>

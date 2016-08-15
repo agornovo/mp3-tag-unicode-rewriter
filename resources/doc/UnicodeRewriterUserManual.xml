@@ -80,7 +80,7 @@
     knowledge in ID3 tags, I looked for other software to solve my problem.
     Incidently, I found ID3iconv which works fine for me. Since ID3iconv is a
     command line tool, it would make my life easier if there is a graphical
-    user interface (GUI) for it. Unicode Rewriter is thus born.</para>
+    user interface (GUI) for it. Unicode Rewriter was thus born.</para>
   </section>
 
   <section>
@@ -287,6 +287,14 @@
     send me a bug report. If you are willing to contribute, you may join the
     software development. If you have ideas, you can give comments or
     suggestions.</para>
+  </section>
+
+  <section>
+    <title>Download</title>
+
+    <para>The installer and the source code are available at <ulink
+    url="http://sourceforge.net/project/showfiles.php?group_id=113227">Source
+    Forge</ulink>.</para>
   </section>
 
   <appendix id="SupportedEncoding">
