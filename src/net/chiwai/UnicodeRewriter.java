@@ -230,11 +230,9 @@ public class UnicodeRewriter extends JFrame {
                 exitForm(evt);
             }
         });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Encoding.setText("System Encoding");
         Encoding.setToolTipText("Please choose encoding from the menu or type directly");
-        getContentPane().add(Encoding, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 100, -1));
 
         Browse.setMnemonic('B');
         Browse.setText("Browse");
@@ -244,7 +242,6 @@ public class UnicodeRewriter extends JFrame {
                 BrowseActionPerformed(evt);
             }
         });
-        getContentPane().add(Browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
 
         Remove.setMnemonic('R');
         Remove.setText("Remove");
@@ -255,7 +252,6 @@ public class UnicodeRewriter extends JFrame {
                 RemoveActionPerformed(evt);
             }
         });
-        getContentPane().add(Remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, -1));
 
         RecursiveCheckBox.setMnemonic('u');
         RecursiveCheckBox.setSelected(true);
@@ -266,7 +262,6 @@ public class UnicodeRewriter extends JFrame {
                 RecursiveCheckBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(RecursiveCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
 
         Convert.setMnemonic('C');
         Convert.setText("Convert");
@@ -277,7 +272,6 @@ public class UnicodeRewriter extends JFrame {
                 ConvertActionPerformed(evt);
             }
         });
-        getContentPane().add(Convert, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         Quit.setMnemonic('Q');
         Quit.setText("Quit");
@@ -287,18 +281,15 @@ public class UnicodeRewriter extends JFrame {
                 QuitActionPerformed(evt);
             }
         });
-        getContentPane().add(Quit, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 240, -1, -1));
 
         EncodingLabel.setLabelFor(Encoding);
         EncodingLabel.setText("Source Encoding");
         EncodingLabel.setFocusable(false);
-        getContentPane().add(EncodingLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
 
         StatusBar.setText("Ready");
         StatusBar.setToolTipText("Please see console for details");
         StatusBar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         StatusBar.setFocusable(false);
-        getContentPane().add(StatusBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 400, -1));
 
         SwingFolderList.setAlignmentX(30.0F);
         SwingFolderList.setPreferredSize(new java.awt.Dimension(250, 170));
@@ -309,13 +300,10 @@ public class UnicodeRewriter extends JFrame {
         });
         ScrollPanel.setViewportView(SwingFolderList);
 
-        getContentPane().add(ScrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 190));
-
         DropPad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DropPad.setText("Drop here");
         DropPad.setEnabled(false);
         DropPad.setFocusable(false);
-        getContentPane().add(DropPad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         EncodingMenu.setMnemonic('E');
         EncodingMenu.setText("Encoding");
@@ -1195,6 +1183,69 @@ public class UnicodeRewriter extends JFrame {
 
         setJMenuBar(MenuBar);
 
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(Remove))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(EncodingLabel))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(Browse))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(Quit))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Convert))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(ScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(RecursiveCheckBox))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(Encoding, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(StatusBar, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(DropPad, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(Remove))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(EncodingLabel))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Browse))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(Quit))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(Convert))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(ScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(RecursiveCheckBox))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(Encoding, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(StatusBar))
+            .addComponent(DropPad, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1747,7 +1798,9 @@ public class UnicodeRewriter extends JFrame {
         
     private void ConvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConvertActionPerformed
         // Add your handling code here:        
-        System.out.println ("Start converting using encoding " + Encoding.getText());
+        String status = "Start converting using encoding " + Encoding.getText();
+        
+        System.out.println (status);
         
         //Call function to convert
         DefaultListModel listModel = (DefaultListModel) SwingFolderList.getModel();
