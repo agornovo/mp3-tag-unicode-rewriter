@@ -1165,9 +1165,8 @@
       <SubComponents>
         <Component class="javax.swing.JList" name="SwingFolderList">
           <Properties>
-            <Property name="alignmentX" type="float" value="30.0"/>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[250, 170]"/>
+              <Dimension value="null"/>
             </Property>
           </Properties>
           <Events>
