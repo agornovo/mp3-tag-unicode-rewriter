@@ -26,8 +26,8 @@
         <date>August 2016</date>
 
         <revdescription>
-          <para>Source code is recompiled with new JDK. New IzPack is
-          used.</para>
+          <para>Source code is recompiled with JDK 1.7. New IzPack is used.
+          User interface (hidden menu) bug fix.</para>
         </revdescription>
       </revision>
     </revhistory>
@@ -242,44 +242,8 @@
   <section>
     <title>Known Bugs</title>
 
-    <para>Although Java program can run everywhere, it may not work exactly
-    the same on every platform. As this software is written for Mac OS X, it
-    may not work properly on other platform like Linux or Windows. If you know
-    how to solve the problems, please write to me. Below is the list of known
-    bugs</para>
-
-    <section>
-      <title>Hidden Menu</title>
-
-      <para>When "Encoding" menu is browsed, some part of the menu is hidden.
-      But after browsing for a long time, the problem disappears.</para>
-
-      <para>A work around solution is to click "Recursive" button a few times
-      to refresh the menu.</para>
-
-      <para><figure>
-          <title>Menu is hidden (Windows 2000)</title>
-
-          <screenshot>
-            <graphic fileref="screenshot/hiddenmenu-win2k.png" format="PNG"
-                     scale="50"/>
-          </screenshot>
-        </figure><figure float="0">
-          <title>Menu is hidden (Linux - Xandros 2.0)</title>
-
-          <screenshot>
-            <graphic fileref="screenshot/hiddenmenu-linux.png" format="PNG"
-                     scale="50"/>
-          </screenshot>
-        </figure><figure>
-          <title>Menu is not hidden (Windows 2000)</title>
-
-          <screenshot>
-            <graphic fileref="screenshot/nohiddenmenu-win2k.png" format="PNG"
-                     scale="50"/>
-          </screenshot>
-        </figure></para>
-    </section>
+    <para>Currently there is no known bug. Please let me know if you have
+    found any bug.</para>
   </section>
 
   <section>
