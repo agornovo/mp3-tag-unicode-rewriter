@@ -68,13 +68,7 @@ public class UnicodeRewriter extends JFrame {
         new FileDrop (DropPad, new FileDrop.Listener() {
             public void filesDropped (File[] files) {
                 //Add file/folder to the folder list
-                AddFolder (FolderList, files);
                 AddFolder (SwingFolderList, files);
-
-                //Enable "Convert" if there is folder in the list
-                if (FolderList.getItemCount() != 0) {            
-                    Convert.setEnabled(true);        
-                }                        
 
                 DefaultListModel listModel = (DefaultListModel) SwingFolderList.getModel();
                 if (listModel.getSize() != 0) {            
@@ -103,11 +97,10 @@ public class UnicodeRewriter extends JFrame {
         Quit = new javax.swing.JButton();
         EncodingLabel = new javax.swing.JLabel();
         StatusBar = new javax.swing.JLabel();
-        DropPad = new javax.swing.JLabel();
-        FolderList = new java.awt.List();
         ScrollPanel = new javax.swing.JScrollPane();
         DefaultListModel listModel = new DefaultListModel();
         SwingFolderList = new javax.swing.JList<>(listModel);
+        DropPad = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         EncodingMenu = new javax.swing.JMenu();
         EastAsia = new javax.swing.JMenu();
@@ -307,21 +300,8 @@ public class UnicodeRewriter extends JFrame {
         StatusBar.setFocusable(false);
         getContentPane().add(StatusBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 400, -1));
 
-        DropPad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        DropPad.setText("Drop here");
-        DropPad.setEnabled(false);
-        DropPad.setFocusable(false);
-        getContentPane().add(DropPad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
-
-        FolderList.setMultipleMode(true);
-        FolderList.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                FolderListItemStateChanged(evt);
-            }
-        });
-        getContentPane().add(FolderList, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 250, 170));
-        FolderList.getAccessibleContext().setAccessibleDescription("");
-
+        SwingFolderList.setAlignmentX(30.0F);
+        SwingFolderList.setPreferredSize(new java.awt.Dimension(250, 170));
         SwingFolderList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SwingFolderListMouseClicked(evt);
@@ -329,7 +309,13 @@ public class UnicodeRewriter extends JFrame {
         });
         ScrollPanel.setViewportView(SwingFolderList);
 
-        getContentPane().add(ScrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
+        getContentPane().add(ScrollPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 190));
+
+        DropPad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        DropPad.setText("Drop here");
+        DropPad.setEnabled(false);
+        DropPad.setFocusable(false);
+        getContentPane().add(DropPad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         EncodingMenu.setMnemonic('E');
         EncodingMenu.setText("Encoding");
@@ -1688,7 +1674,6 @@ public class UnicodeRewriter extends JFrame {
           
         if (SelectPath.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
             //Add selected files to the folder list
-            AddFolder(FolderList, SelectPath.getSelectedFiles());           
             AddFolder(SwingFolderList, SelectPath.getSelectedFiles());           
         }        
 
@@ -1696,14 +1681,7 @@ public class UnicodeRewriter extends JFrame {
         if (SwingFolderList.getModel().getSize() != 0) {
             Convert.setEnabled(true);
         }        
-        
-
-        //Enable "Convert" if there is folder in the list
-        if (FolderList.getItemCount() != 0) {
-            Convert.setEnabled(true);
-        }        
-
-
+     
     }//GEN-LAST:event_BrowseActionPerformed
     
 
@@ -1713,34 +1691,6 @@ public class UnicodeRewriter extends JFrame {
      * @parm FolderList List to store the files
      * @parm Files Files to store to the list
      */
-    private void AddFolder (java.awt.List FolderList, java.io.File[] Files) {            
-        int FolderListItemCount = FolderList.getItemCount();                    
-        for (int i = 0; i < Files.length; i++) {            
-            if (FolderListItemCount == 0 ) {            
-                //If there is no items, add selected files to the list                
-                FolderList.add (Files[i].getAbsolutePath());
-            } else {            
-                int j;                
-                //Add only if there is no duplicated file                
-                for (j = 0; j < FolderListItemCount; j++) {                
-                    if (FolderList.getItem(j).compareToIgnoreCase(Files[i].getAbsolutePath()) == 0) {                                                                
-                        break;                                             
-                    }                    
-                }
-
-                
-                if (j == FolderListItemCount) {                
-                    FolderList.add (Files[i].getAbsolutePath());                  
-                }                
-            }            
-        }
-        
-        if (FolderListItemCount < FolderList.getItemCount()) {
-            //Update status bar
-            StatusBar.setText ("Files/folders are added to the list.");
-        }
-    }
-    
     private void AddFolder (javax.swing.JList FolderList, java.io.File[] Files) {            
         DefaultListModel listModel =  (DefaultListModel) FolderList.getModel();
         int FolderListItemCount = listModel.getSize();
@@ -1771,36 +1721,20 @@ public class UnicodeRewriter extends JFrame {
 
     }
 
-    private void FolderListItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_FolderListItemStateChanged
-        // Add your handling code here:
-        if (FolderList.getSelectedIndexes().length  > 0 ) {
-            Remove.setEnabled(true);
-        } else {
-            Remove.setEnabled(false);
-        }                
-    }//GEN-LAST:event_FolderListItemStateChanged
     private void RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveActionPerformed
         // Add your handling code here:
         //Remove all selected item(s)
-        while (FolderList.getSelectedIndexes().length > 0) {
-            FolderList.remove(FolderList.getSelectedIndexes()[0]);
-        }
-
-        
+    
         DefaultListModel listModel = (DefaultListModel) SwingFolderList.getModel();
         while (SwingFolderList.getSelectedIndices().length > 0) {
-            //FolderList.remove(FolderList.getSelectedIndexes()[0]);
             listModel.removeElementAt(SwingFolderList.getSelectedIndex());
         }
 
+
         //Disable Remove button as there is no item
         Remove.setEnabled(false);
-        
-        //Disable Convert button if there is no item
-        if (FolderList.getItemCount() == 0) {
-            Convert.setEnabled (false);
-        }
-        
+      
+      
         //Disable Convert button if there is no item
         if (listModel.getSize() == 0) {
             Convert.setEnabled (false);
@@ -1816,27 +1750,14 @@ public class UnicodeRewriter extends JFrame {
         System.out.println ("Start converting using encoding " + Encoding.getText());
         
         //Call function to convert
-        for (int i = 0; i < FolderList.getItemCount(); i++) {                
-            ID3Convert (new File(FolderList.getItem(i)), RecursiveCheckBox.isSelected(), Encoding.getText());
-        }
-
         DefaultListModel listModel = (DefaultListModel) SwingFolderList.getModel();
         for (int i = 0; i < listModel.getSize(); i++) {                
             ID3Convert (new File((String) listModel.getElementAt(i)), RecursiveCheckBox.isSelected(), Encoding.getText());
         }
         
         UpdateStatus (nbFolder, nbProcessed, nbConverted);
-             
-        //Remove the folder list
-        /*
-        while (FolderList.getItemCount() > 0) {
-            FolderList.remove(0);
-        }*/
-        
-        
-        //Disable Convert button as there is no folder list
-        //Convert.setEnabled(false);
-        
+            
+       
         //Reset the statistics
         nbFolder = 0;
         nbProcessed = 0;
@@ -1962,7 +1883,6 @@ public class UnicodeRewriter extends JFrame {
     private javax.swing.JLabel EncodingLabel;
     private javax.swing.JMenu EncodingMenu;
     private javax.swing.JMenu Farsi;
-    private java.awt.List FolderList;
     private javax.swing.JMenuItem GBK;
     private javax.swing.JMenu Greek;
     private javax.swing.JMenu Hebrew;
