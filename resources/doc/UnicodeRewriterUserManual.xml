@@ -259,11 +259,10 @@
     preparation of the installer.</para>
 
     <para>This document is prepared using <ulink
-    url="http://www.oasis-open.org/docbook/">Docbook</ulink> XML V4.5 with the
-    original style sheet. <ulink
+    url="http://www.oasis-open.org/docbook/">Docbook</ulink> XML V4.5. <ulink
     url="http://www.xmlmind.com/xmleditor">XMLmind XML Editor</ulink> Personal
     Edition 7.0 was used to prepare this document. HTML and PDF conversion is
-    processed using the editor.</para>
+    processed using this editor.</para>
   </section>
 
   <section>
