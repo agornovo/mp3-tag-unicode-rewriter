@@ -26,7 +26,6 @@
 			</dname>
 		</genkey>
 		<!-- Sign JAR -->
-		<signjar jar="${lib}/org.netbeans.lib.awtextra.jar" signedjar="${webstart}/org.netbeans.lib.awtextraS.jar" alias="UnicodeRewriter" storepass="eghcw000" keystore="${webstart}/UnicodeRewriter-key" />
 		<signjar jar="${bin}/UnicodeRewriter.jar" signedjar="${webstart}/UnicodeRewriterS.jar" alias="UnicodeRewriter" storepass="eghcw000" keystore="${webstart}/UnicodeRewriter-key" />
 		<!-- Remove key -->
 		<delete>
