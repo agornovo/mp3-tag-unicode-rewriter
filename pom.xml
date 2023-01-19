@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.chiwai</groupId>
+    <artifactId>mp3-tag-unicode-rewriter</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>mp3-tag-unicode-rewriter</name>
+    <description>Unicode Rewriter is a Java tool which converts ID3 tags of MP3 files into Unicode</description>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- The main class to start by executing java -jar -->
+        <start-class>net.chiwai.UnicodeRewriter</start-class>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
