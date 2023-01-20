@@ -55,13 +55,13 @@ public class UnicodeRewriter extends JFrame {
         //Set Default Encoding
         Encoding.setText(System.getProperty("file.encoding"));
 
-        //Reset sttatics
+        //Reset statistics
         nbFolder = 0;
         nbProcessed = 0;
         nbConverted = 0;
 
         //Use ID3iconv
-        ID3Rewriter = new ID3iconv();
+        ID3Rewriter = new Converter();
 
 
         //Allow drag and drop a file/folder to the folder list
@@ -2002,7 +2002,7 @@ public class UnicodeRewriter extends JFrame {
     private javax.swing.JMenu WEurope;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
-    private ID3iconv ID3Rewriter;//Use ZhouFeng's library to convert ID3 tags
+    private Converter ID3Rewriter;//Use ZhouFeng's library to convert ID3 tags
     private int nbFolder;//Number of processed folders
     private int nbProcessed;//Number of processed files
     private int nbConverted;//Number of converted files
@@ -2023,9 +2023,8 @@ public class UnicodeRewriter extends JFrame {
                     System.out.println ("Converting..." + Folder.getAbsoluteFile());       
                     nbProcessed++;           
                     try {
-                        if (ID3Rewriter.convert (Folder, Encoding) == 0) {                                                            
-                            nbConverted++;                                                        
-                        }                                            
+                        ID3Rewriter.convert(Folder, Encoding);
+                        nbConverted++;                                                      
                     } catch (Exception e) {                                                
                         System.err.println ("Error " + e.getMessage());                                                                         
                     }

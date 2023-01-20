@@ -19,13 +19,13 @@
  */
 package net.chiwai;
 import java.io.File;
-import javax.swing.*;
-import javax.swing.filechooser.*;
+
 /*
  * PacketFilter.java
  *
  * Created on June 13, 2004, 3:09 PM
  */
+import javax.swing.filechooser.FileFilter;
 
 /**
  *
