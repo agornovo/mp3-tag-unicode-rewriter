@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.chiwai</groupId>
+    <groupId>com.github.agornovo</groupId>
     <artifactId>mp3-tag-unicode-rewriter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>mp3-tag-unicode-rewriter</name>
-    <description>Unicode Rewriter is a Java tool which converts ID3 tags of MP3 files into Unicode</description>
+    <description>Unicode Rewriter is a Java GUI tool which converts ID3 tags of MP3 files into Unicode</description>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -24,9 +24,16 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>net.zhoufeng</groupId>
+            <groupId>com.github.agornovo</groupId>
             <artifactId>id3iconv</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/agornovo/public</url>
+        </repository>
+    </distributionManagement>
 </project>
