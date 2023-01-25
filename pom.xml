@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.agornovo</groupId>
     <artifactId>mp3-tag-unicode-rewriter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.4.1-SNAPSHOT</version>
     <name>mp3-tag-unicode-rewriter</name>
     <description>Unicode Rewriter is a Java GUI tool which converts ID3 tags of MP3 files into Unicode</description>
     <url>https://github.com/agornovo/mp3-tag-unicode-rewriter</url>
